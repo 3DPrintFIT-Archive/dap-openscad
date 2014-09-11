@@ -1,0 +1,5 @@
+*.gcode
+plate*.stl
+plate*.png
+src/*.stl
+~*

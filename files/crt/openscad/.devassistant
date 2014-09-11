@@ -1,0 +1,6 @@
+fullname: {{name}}
+description: Set up environment for {{name}}
+
+dependencies:
+- rpm: ['openscad', 'simarrange']
+- pip: ['stlsort']

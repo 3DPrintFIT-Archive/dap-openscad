@@ -1,0 +1,32 @@
+fullname: OpenSCAD
+description: Set up environment for an OpenSCAD project for 3D printing
+
+dependencies:
+- rpm: ['openscad', 'simarrange']
+- pip: ['stlsort']
+
+args:
+  name:
+    use: common_args
+
+  github:
+    use: common_args
+
+files:
+  project: &project
+    source: .
+
+run:
+- setup_project_dir:
+    from: $name
+    on_existing: fail
+    create_topdir: True
+    contdir_var: dirname
+    topdir_normalized_var: basename
+- cl_i: cp -r *project "$basename"
+- cl_i: cd "$basename"
+- cl_i: sed -i 's/{{name}}/$basename/g' README.md .devassistant
+- use: git_init_add_commit.run
+- log_i: "$basename project created, see README.md for more information"
+- if defined $github:
+  - github: create_and_push
