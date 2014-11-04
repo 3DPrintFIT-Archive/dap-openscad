@@ -26,7 +26,7 @@ run:
 - cl_i: cp -r *project "$basename"
 - cl_i: cd "$basename"
 - cl_i: sed -i 's/{{name}}/$basename/g' README.md .devassistant
-- use: git_init_add_commit.run
+- use: git.init_add_commit.run
 - log_i: "$basename project created, see README.md for more information"
 - if defined $github:
   - github: create_and_push
