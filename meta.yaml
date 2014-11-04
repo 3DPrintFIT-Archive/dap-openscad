@@ -1,10 +1,11 @@
 package_name: openscad
-version: 0.0.1dev
+version: 0.0.2dev
 license: GPLv3+ and GPLv2 with exceptions
 authors: [Miro Hrončok <miro@hroncok.cz>, Marek Žehra <marek@zehra.cz>]
 homepage: https://github.com/3DprintFIT/dap-openscad
 summary: Create 3D printing projects for OpenSCAD
 bugreports: https://github.com/3DprintFIT/dap-openscad/issues
+dependencies: [common_args]
 description: |
     This assistants helps you to create new OpenSCAD project for 3D printing.
     We use it in our 3D printing lab to store our 3D printers on Github.
